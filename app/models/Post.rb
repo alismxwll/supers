@@ -8,8 +8,8 @@ class Post < ActiveRecord::Base
   validates_uniqueness_of :title
   belongs_to :user
 
-  def self.search(find)
-    where("title like ?", "%#{find}%")
+  def self.search(query)
+    where("lower(title || ' ' || content) like ?", "%#{query}%" )
   end
 
 end
