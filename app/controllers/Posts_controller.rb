@@ -3,6 +3,11 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order('created_at DESC').first(10)
+    if params[:search]
+      @posts = Post.search(params[:search]).order("created_at DESC")
+    else
+      @posts = Post.all.order('created_at DESC')
+    end
   end
 
   def new
@@ -43,6 +48,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content).merge(:user_id => current_user.id)
+    params.require(:post).permit(:title, :content, :picture).merge(:user_id => current_user.id)
   end
 end

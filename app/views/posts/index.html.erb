@@ -2,7 +2,7 @@
 
 <ul>
   <% @posts.each do |post| %>
-    <h3><%= post.title %></h3>
+    <h3><%= link_to "#{post.title}", post_path(post.id) %></h3>
     <li><%= post.content %></li>
   <% end %>
 </ul>
