@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+
+development:
+  <<: *default
+  database: picture_share_development
+
+test:
+  <<: *default
+  database: picture_share_test
+
+production:
+  <<: *default
+  database: picture_share_production
+  username: picture_share
+  password: <%= ENV['PICTURE_SHARE_DATABASE_PASSWORD'] %>
