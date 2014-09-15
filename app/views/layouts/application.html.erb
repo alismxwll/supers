@@ -9,7 +9,7 @@
 <body>
 <div class='top-nav'>
   <%= link_to "Home", root_path %>
-  <%= link_to "New Post", new_post_path, id: 'new-post' %>
+  <%= link_to "New Post", new_post_path, id: 'new-post', remote: true %>
     <%= notice %>
     <%= alert %>
   <div class='user-nav'>
@@ -29,7 +29,7 @@
     </div>
   </div>
 </div>
-  <div class='container'>
+  <div id='main' class='container'>
     <div class='post-container'>
 
       <%= yield %>

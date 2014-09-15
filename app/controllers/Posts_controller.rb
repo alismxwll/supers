@@ -17,7 +17,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(post_params)
     if @post.valid?
-      redirect_to root_path, notice: "Post Added"
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: "Post Added" }
+        format.js
+      end
     else
       render 'index'
     end
