@@ -1,4 +1,8 @@
-<h1>Posts</h1>
+<h1>Turn your dream vacation into a reality</h1>
+
+<ul class="nav nav-pills" class="pull-right">
+  <li><%= link_to "List your place", new_post_path, id: 'new-post', remote: true %></li>
+</ul>
 
 <ul>
   <% @posts.each do |post| %>
