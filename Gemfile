@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'textacular'
 gem 'paperclip', '~> 4.2'
+gem 'remotipart', '~> 1.2'
 
 group :development do
   gem 'letter_opener'

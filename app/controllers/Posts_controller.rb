@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  # skip_before_action :verify_authenticity_token
 
   def index
     @posts = Post.all.order('created_at DESC').first(10)
@@ -16,6 +17,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
+    @user = current_user
     if @post.valid?
       respond_to do |format|
         format.html { redirect_to root_path, notice: "Post Added" }
