@@ -1,9 +1,11 @@
 <h1>Space r&amp;zg</h1>
 <h4>Turn your dream vacation into a reality</h4>
 
-<ul class="nav nav-pills" class="pull-right">
-  <li><%= link_to "List your place", new_post_path, id: 'new-post', remote: true %></li>
-</ul>
+<div class="pull-right">
+  <ul class="nav nav-pills">
+    <li><%= link_to "List your place", new_post_path, id: 'new-post', remote: true %></li>
+  </ul>
+</div>
 
 <ul>
   <% @posts.each do |post| %>
