@@ -1,15 +1,16 @@
-<h1>Space r&amp;zg</h1>
-<h4>Turn your dream vacation into a reality</h4>
+<div class='page-header'>
+  <h1>Space r&amp;zg(radiation &amp; zero-gravity)</h1>
+  <h4>Too much garbage in your face? There's plenty of space out in space!</h4>
+</div>
 
-<div class="pull-right">
+<div class="pull-right" class='col-xs-3'>
   <ul class="nav nav-pills">
-    <li><%= link_to "List your place", new_post_path, id: 'new-post', remote: true %></li>
+    <li><%= link_to "Live in Space?", new_post_path, id: 'new-post', remote: true %></li>
   </ul>
 </div>
 
-<ul>
+<div class='col-xs-8'>
   <% @posts.each do |post| %>
-    <h3><%= link_to "#{post.title}", post_path(post.id) %></h3>
-    <li><%= post.content %></li>
+    <%= link_to image_tag(post.picture.url(:thumb)), post_path(post.id) %>
   <% end %>
-</ul>
+</div>

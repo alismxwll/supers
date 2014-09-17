@@ -1,8 +1,19 @@
-<%= form_for @post, :url => posts_path, id: 'post-form', remote: true, :html => { :multipart => true } do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %><br>
-  <%= f.label :content %>
-  <%= f.text_area :content %>
-  <%= f.file_field :picture %>
-  <%= f.submit %>
-<% end %>
+<div class='row'>
+  <div class='col-xs-5 control-label'>
+    <div class="form-group">
+      <%= form_for @post, :url => posts_path, id: 'post-form', remote: true, :html => { :multipart => true } do |f| %>
+      <%= f.label "Space name?" %>
+      <%= f.text_field :title, autofocus: true %><br><br>
+      <%= f.label "Descibe it" %>
+      <%= f.text_area :content %>
+    </div>
+    <div class="form-group">
+      <%= f.label "Show your Space" %>
+      <%= f.file_field :picture %>
+    </div>
+      <%= f.submit "Create Space" %>
+    <% end %>
+    </div>
+  </form>
+  </div>
+</div>
