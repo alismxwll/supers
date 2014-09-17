@@ -1,4 +1,13 @@
-<h1><%= "#{@post.title}" %></h1>
-<li><%= @post.content %></li>
-<li><%= image_tag @post.picture.url %></li>
+<div class='page-header'>
+  <h1><%= "#{@post.title}" %></h1>
+</div>
 
+<div class='col-xs-6'>
+  <blockquote>
+    <%= @post.content %>
+  </blockquote>
+</div>
+
+<div class='col-xs-6'>
+  <%= image_tag @post.picture.url %>
+</div>
